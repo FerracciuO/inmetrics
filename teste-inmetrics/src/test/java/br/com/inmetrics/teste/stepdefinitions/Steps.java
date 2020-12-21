@@ -83,23 +83,28 @@ public void cadastrar() {
 // So precisa de etapas em Comum
 
 // Funcionario --------------------------------------------------
-
-@Given("Setup")
-public void setup() {
-    // Write code here that turns the phrase above into concrete actions
-    
+//cadastrar
+@Then("Click Novo Usuario")
+public void click_novo_usuario() {
+	driver.get("http://www.inmrobo.tk/empregados/new_empregado");
 }
 
-@When("Excluir editar")
-public void excluir_editar() {
-    // Write code here that turns the phrase above into concrete actions
-    
+@Then("Preencher Novo Usuario")
+public void preencher_novo_usuario() {
+	driver.findElement(By.id("inputNome")).sendKeys("JoaoTeste");
+	driver.findElement(By.id("inputAdmissao")).sendKeys("04072002");
+	driver.findElement(By.id("inputCargo")).sendKeys("CargoTeste");
+	driver.findElement(By.id("dinheiro")).sendKeys("150000");
+	driver.findElement(By.id("cpf")).sendKeys("34576284302");
+	driver.findElement(By.id("slctSexo")).sendKeys("Masculino");
+	driver.findElement(By.id("pj")).click();
+	driver.findElement(By.className("cadastrar-form-btn")).click();
 }
 
-@Then("Verificar excluir editar")
-public void verificar_excluir_editar() {
-    // Write code here that turns the phrase above into concrete actions
-    
+@Then("Verificar Criação Novo Usuario")
+public void verificar_criação_novo_usuario() {
+	driver.findElement(By.className("alert-success"));
 }
 
+		
 }

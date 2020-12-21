@@ -1,13 +1,10 @@
-Feature: Funcionário (Cadastrar / Editar / excluir)
+Feature: Funcionário (Criar / Editar / Excluir)
 
-Scenario: Funcionário Excluir
-Given Setup
-When Excluir editar
-Then Verificar excluir editar
+Scenario: Criar Funcionário
+Given launch browser login
+When Login
+Then Click Novo Usuario
+Then Preencher Novo Usuario
+Then Verificar Criação Novo Usuario
 And Fechar
 
-Scenario: Funcionário Editar
-Given Setup
-When Excluir editar
-Then Verificar excluir editar
-And Fechar
