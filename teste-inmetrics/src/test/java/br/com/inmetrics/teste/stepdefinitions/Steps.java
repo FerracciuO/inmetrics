@@ -106,5 +106,31 @@ public void verificar_criação_novo_usuario() {
 	driver.findElement(By.className("alert-success"));
 }
 
-		
+ // editar funcionário -----------------------------------------
+
+@Then("Click Editar funcionário")
+public void click_editar_funcionário() {
+	driver.findElement(By.className("fa-pencil")).click();
+}
+@Then("Realizar Alteração")
+public void realizar_alteração() {
+	driver.findElement(By.id("inputNome")).sendKeys("2");
+	driver.findElement(By.className("cadastrar-form-btn")).click();
+}
+@Then("Verificar Alteração")
+public void verificar_alteração() {
+	driver.findElement(By.className("alert-success"));
+}
+
+ // Excluir Funcionário
+
+@Then("Click Excluir funcionário")
+public void click_excluir_funcionário() {
+	driver.findElement(By.id("delete-btn")).click();	
+}
+
+@Then("Verificar Exclusão")
+public void verificar_exclusão() {
+	driver.findElement(By.className("alert-success"));		
+}
 }
